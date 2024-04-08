@@ -96,7 +96,7 @@ for time in years:
                        "MIN": twins},
         "AL West": {"LAA": angels, "HOU": astros, "SEA": mariners,
                     "TEX": rangers, "OAK": athletics},
-        "NL East": {"WSH": nationals, "NYM": mets, "ATL": braves,
+        "NL East": {"WSN": nationals, "NYM": mets, "ATL": braves,
                     "MIA": marlins, "PHI": phillies},
         "NL Central": {"CHC": cubs, "MIL": brewers, "STL": cardinals,
                        "PIT": pirates, "CIN": reds},

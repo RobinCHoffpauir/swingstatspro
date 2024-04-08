@@ -72,7 +72,7 @@ team_batting_data = team_batting(year)
 team_pitching_data = team_pitching(year)
 ##################
 team_dfs = {}  # Create an empty #dictionary to store DataFrames #for each team
-db_path = f"./data/databases/{year}_schedule_record.db"
+db_path = f"betting\data\databases\{year}_schedule_record.db"
 conn = sqlite3.connect(db_path)
 c = conn.cursor()
 team_dfs = {}
@@ -105,7 +105,7 @@ compare = pd.merge(run_data
 [['Team', 'Pythag Expected %']], team_data[[
                    'Team', 'Created Winning %']], on='Team')
 
-"""for team, df in team_dfs.items():
+for team, df in team_dfs.items():
     # Determine wins: 1 for a win, 0 for a loss
     df['Win'] = df['Rslt'].apply(lambda x: 1 if x == 'W' else 0)
 
@@ -121,5 +121,5 @@ for team in compare.index:
     z = team_dfs.get(team)['Winning Percentage']
     y = compare.loc[team]
     compare.loc[team, 'Win %'] = (z.iloc[161])
-"""
+
 print(compare)
