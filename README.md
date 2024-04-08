@@ -1,2 +1,1 @@
-# swingstatspro
-MLB predictive algorithms with statcast and other statistical resources 
+## This is a collection of my baseball data analysis in python
