@@ -1,18 +1,13 @@
-import argparse
 
 import requests
 
 import pandas as pd
 
-# Obtain the api key that was passed in from the command line
-parser = argparse.ArgumentParser(description='Sample V4')
-parser.add_argument('--api-key', type=str, default='')
-args = parser.parse_args()
 
 
 # An api key is emailed to you when you sign up to a plan
 # Get a free API key at https://api.the-odds-api.com/
-API_KEY = args.api_key or '1628e7b26fd53acf9eef611ac3466368'
+API_KEY = '1628e7b26fd53acf9eef611ac3466368'
 
 
 # Sport key
@@ -108,7 +103,7 @@ for event in api_data:
 df = pd.DataFrame(processed_data)
 
 # Display the DataFrame to verify its structure
-df.to_csv(f'betting/data/odds/{DATE}_odds.csv', index=False)
+df.to_csv(f'data/odds/{DATE}_odds.csv', index=False)
 print(df)
 
 
@@ -134,4 +129,4 @@ game_probabilities = df.groupby(['id', 'outcome_name'])['probability'].mean().re
 # If you need a pivot table with teams on columns and probabilities as values
 game_probabilities_pivot = game_probabilities.pivot(index='id', columns='outcome_name', values='probability').reset_index()
 
-game_probabilities.to_csv(f'betting/data/probabilities/{DATE}_probabilities.csv', index=False)
+game_probabilities.to_csv(f'data/probabilities/{DATE}_probabilities.csv', index=False)

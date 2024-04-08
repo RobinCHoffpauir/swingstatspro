@@ -1,0 +1,48 @@
+id,sport_title,commence_time,home_team,away_team,bookmaker,outcome_name,odds
+269bd9b61abd0ea54ac37d0e78e4fc46,MLB,2024-04-08T21:10:00Z,Cleveland Guardians,Chicago White Sox,Hard Rock Bet,Chicago White Sox,450.0
+269bd9b61abd0ea54ac37d0e78e4fc46,MLB,2024-04-08T21:10:00Z,Cleveland Guardians,Chicago White Sox,Hard Rock Bet,Cleveland Guardians,-700.0
+b426f150a2bf13712a4bb0fdf9ca1f25,MLB,2024-04-08T22:05:00Z,New York Yankees,Miami Marlins,Hard Rock Bet,Miami Marlins,135.0
+b426f150a2bf13712a4bb0fdf9ca1f25,MLB,2024-04-08T22:05:00Z,New York Yankees,Miami Marlins,Hard Rock Bet,New York Yankees,-165.0
+82d7fc73685b3efb7688b894c48bdd78,MLB,2024-04-08T22:40:00Z,Cincinnati Reds,Milwaukee Brewers,Hard Rock Bet,Cincinnati Reds,-110.0
+82d7fc73685b3efb7688b894c48bdd78,MLB,2024-04-08T22:40:00Z,Cincinnati Reds,Milwaukee Brewers,Hard Rock Bet,Milwaukee Brewers,-110.0
+9e7ab70be858b0fb1f713c4d4679158b,MLB,2024-04-08T22:40:00Z,Pittsburgh Pirates,Detroit Tigers,Hard Rock Bet,Detroit Tigers,110.0
+9e7ab70be858b0fb1f713c4d4679158b,MLB,2024-04-08T22:40:00Z,Pittsburgh Pirates,Detroit Tigers,Hard Rock Bet,Pittsburgh Pirates,-135.0
+9ba20b06d3d326b4397373d58269bf1f,MLB,2024-04-08T23:07:00Z,Toronto Blue Jays,Seattle Mariners,Hard Rock Bet,Seattle Mariners,100.0
+9ba20b06d3d326b4397373d58269bf1f,MLB,2024-04-08T23:07:00Z,Toronto Blue Jays,Seattle Mariners,Hard Rock Bet,Toronto Blue Jays,-120.0
+33840edd610451b693e76f7186e6a086,MLB,2024-04-08T23:20:00Z,Atlanta Braves,New York Mets,Hard Rock Bet,Atlanta Braves,-220.0
+33840edd610451b693e76f7186e6a086,MLB,2024-04-08T23:20:00Z,Atlanta Braves,New York Mets,Hard Rock Bet,New York Mets,170.0
+c47090b313f914cbd2518a9cfedd478b,MLB,2024-04-08T23:40:00Z,Minnesota Twins,Los Angeles Dodgers,Hard Rock Bet,Los Angeles Dodgers,-125.0
+c47090b313f914cbd2518a9cfedd478b,MLB,2024-04-08T23:40:00Z,Minnesota Twins,Los Angeles Dodgers,Hard Rock Bet,Minnesota Twins,105.0
+edbf77a61511a18abd0f24a13c82ee44,MLB,2024-04-08T23:45:00Z,St. Louis Cardinals,Philadelphia Phillies,Hard Rock Bet,Philadelphia Phillies,-110.0
+edbf77a61511a18abd0f24a13c82ee44,MLB,2024-04-08T23:45:00Z,St. Louis Cardinals,Philadelphia Phillies,Hard Rock Bet,St. Louis Cardinals,-110.0
+6405754c8dc94d07532f8c89275efca8,MLB,2024-04-09T00:05:00Z,Texas Rangers,Houston Astros,Hard Rock Bet,Houston Astros,110.0
+6405754c8dc94d07532f8c89275efca8,MLB,2024-04-09T00:05:00Z,Texas Rangers,Houston Astros,Hard Rock Bet,Texas Rangers,-135.0
+d5a79b3f863d1b41ca5b9996daade0b0,MLB,2024-04-09T00:40:00Z,Colorado Rockies,Arizona Diamondbacks,Hard Rock Bet,Arizona Diamondbacks,-175.0
+d5a79b3f863d1b41ca5b9996daade0b0,MLB,2024-04-09T00:40:00Z,Colorado Rockies,Arizona Diamondbacks,Hard Rock Bet,Colorado Rockies,145.0
+c163b5f5f4579c8293266956ccf3d9bd,MLB,2024-04-09T01:38:00Z,Los Angeles Angels,Tampa Bay Rays,Hard Rock Bet,Los Angeles Angels,120.0
+c163b5f5f4579c8293266956ccf3d9bd,MLB,2024-04-09T01:38:00Z,Los Angeles Angels,Tampa Bay Rays,Hard Rock Bet,Tampa Bay Rays,-145.0
+7d584f5a2dea3c913e37536fe1fdcab5,MLB,2024-04-09T01:40:00Z,San Diego Padres,Chicago Cubs,Hard Rock Bet,Chicago Cubs,115.0
+7d584f5a2dea3c913e37536fe1fdcab5,MLB,2024-04-09T01:40:00Z,San Diego Padres,Chicago Cubs,Hard Rock Bet,San Diego Padres,-135.0
+39fb014f345a723482084e5aca2bc5d4,MLB,2024-04-09T01:45:00Z,San Francisco Giants,Washington Nationals,Hard Rock Bet,San Francisco Giants,-220.0
+39fb014f345a723482084e5aca2bc5d4,MLB,2024-04-09T01:45:00Z,San Francisco Giants,Washington Nationals,Hard Rock Bet,Washington Nationals,170.0
+d053770cc2cedd6b09c4ca8878cb7679,MLB,2024-04-09T16:35:00Z,Pittsburgh Pirates,Detroit Tigers,,,
+cff869ac412b13c4e27283a7bd2cb40b,MLB,2024-04-09T18:10:00Z,Boston Red Sox,Baltimore Orioles,,,
+00bcd89e9d2333d22b41b1e3db6bad33,MLB,2024-04-09T22:10:00Z,Cleveland Guardians,Chicago White Sox,,,
+401b617b15cef11bbfb9a52cb92c856d,MLB,2024-04-09T22:40:00Z,Cincinnati Reds,Milwaukee Brewers,Hard Rock Bet,Cincinnati Reds,-155.0
+401b617b15cef11bbfb9a52cb92c856d,MLB,2024-04-09T22:40:00Z,Cincinnati Reds,Milwaukee Brewers,Hard Rock Bet,Milwaukee Brewers,130.0
+b034cabe636e33b1a58aa6a08143302f,MLB,2024-04-09T23:05:00Z,New York Yankees,Miami Marlins,,,
+89b313b9b1bb610e8c26c838514b6d5d,MLB,2024-04-09T23:07:00Z,Toronto Blue Jays,Seattle Mariners,,,
+9203091bebb23e275c8842794604078d,MLB,2024-04-09T23:20:00Z,Atlanta Braves,New York Mets,Hard Rock Bet,Atlanta Braves,-190.0
+9203091bebb23e275c8842794604078d,MLB,2024-04-09T23:20:00Z,Atlanta Braves,New York Mets,Hard Rock Bet,New York Mets,155.0
+ec5c7c51c4d7d0e4000f74518a58dc4b,MLB,2024-04-09T23:40:00Z,Kansas City Royals,Houston Astros,Hard Rock Bet,Houston Astros,-125.0
+ec5c7c51c4d7d0e4000f74518a58dc4b,MLB,2024-04-09T23:40:00Z,Kansas City Royals,Houston Astros,Hard Rock Bet,Kansas City Royals,105.0
+82e5f2045de7e6c38e1da3aa31b60039,MLB,2024-04-09T23:40:00Z,Minnesota Twins,Los Angeles Dodgers,Hard Rock Bet,Los Angeles Dodgers,-175.0
+82e5f2045de7e6c38e1da3aa31b60039,MLB,2024-04-09T23:40:00Z,Minnesota Twins,Los Angeles Dodgers,Hard Rock Bet,Minnesota Twins,145.0
+e58f40b4532f688304e8e71920498851,MLB,2024-04-09T23:45:00Z,St. Louis Cardinals,Philadelphia Phillies,Hard Rock Bet,Philadelphia Phillies,-135.0
+e58f40b4532f688304e8e71920498851,MLB,2024-04-09T23:45:00Z,St. Louis Cardinals,Philadelphia Phillies,Hard Rock Bet,St. Louis Cardinals,110.0
+e3d0e60421b2efa13e08a6b04526d11b,MLB,2024-04-10T00:40:00Z,Colorado Rockies,Arizona Diamondbacks,Hard Rock Bet,Arizona Diamondbacks,-200.0
+e3d0e60421b2efa13e08a6b04526d11b,MLB,2024-04-10T00:40:00Z,Colorado Rockies,Arizona Diamondbacks,Hard Rock Bet,Colorado Rockies,160.0
+00a59cb0b1f6e006fe21c893f43caafe,MLB,2024-04-10T01:38:00Z,Los Angeles Angels,Tampa Bay Rays,Hard Rock Bet,Los Angeles Angels,110.0
+00a59cb0b1f6e006fe21c893f43caafe,MLB,2024-04-10T01:38:00Z,Los Angeles Angels,Tampa Bay Rays,Hard Rock Bet,Tampa Bay Rays,-135.0
+81db340a7510640e8ed1bbb621611484,MLB,2024-04-10T01:45:00Z,San Francisco Giants,Washington Nationals,Hard Rock Bet,San Francisco Giants,-170.0
+81db340a7510640e8ed1bbb621611484,MLB,2024-04-10T01:45:00Z,San Francisco Giants,Washington Nationals,Hard Rock Bet,Washington Nationals,140.0
