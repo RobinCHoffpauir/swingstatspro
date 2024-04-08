@@ -39,7 +39,8 @@ def save_teams_to_single_db(dfs, db_name):
     conn = sqlite3.connect(f"{db_name}")
 
     for team_name, df in dfs.items():
-        # Save the DataFrame to the SQLite database in a table named after the team
+        # Save the DataFrame to the SQLite database in a table named after the teams abbreviation
+        
         df.to_sql(team_name, conn, if_exists='replace', index=False)
 
     # Commit the changes and close the connection
@@ -84,53 +85,27 @@ for time in years:
     cardinals = pyb.    schedule_and_record(year, 'STL')
     pirates = pyb.schedule_and_record   (year, 'PIT')
 
+# change the dictionary below to map the team abbreviation to the schedule_and_record functions output
+
+
     divisions = {
-        "AL East": {"Boston": red_sox, "New York": yankees, "Tampa Bay": rays,
-                    "Toronto": blue_jays, "Baltimore": orioles},
-        "AL Central": {"Cleveland": guardians, "Detroit": tigers,
-                       "Chicago": white_sox, "Kansas City": royals,
-                       "Minnesota": twins},
-        "AL West": {"Los Angeles": angels, "Houston": astros, "Seattle": mariners,
-                    "Texas": rangers, "Oakland": athletics},
-        "NL East": {"Washington": nationals, "New York": mets, "Atlanta": braves,
-                    "Miami": marlins, "Philadelphia": phillies},
-        "NL Central": {"Chicago": cubs, "Milwaukee": brewers, "St.Louis": cardinals,
-                       "Pittsburgh": pirates, "Cinncinnati": reds},
-        "NL West": {"Los Angeles": dodgers, "Arizona": d_backs, "Colorado": rockies,
-                    "San Diego": padres, "San Francisco": giants}
+        "AL East": {"BOS": red_sox, "NYY": yankees, "TBR": rays,
+                    "TOR": blue_jays, "BAL": orioles},
+        "AL Central": {"CLE": guardians, "DET": tigers,
+                       "CWS": white_sox, "KCR": royals,
+                       "MIN": twins},
+        "AL West": {"LAA": angels, "HOU": astros, "SEA": mariners,
+                    "TEX": rangers, "OAK": athletics},
+        "NL East": {"WSH": nationals, "NYM": mets, "ATL": braves,
+                    "MIA": marlins, "PHI": phillies},
+        "NL Central": {"CHC": cubs, "MIL": brewers, "STL": cardinals,
+                       "PIT": pirates, "CIN": reds},
+        "NL West": {"LAD": dodgers, "ARI": d_backs, "COL": rockies,
+                    "SDP": padres, "SFG": giants}
     }
     for teams in divisions.values():
         save_teams_to_single_db(teams, f'betting/data/databases/{year}_schedule_record.db')
-#### the tables that are saved to the database are: 
-"""
-
-Boston
-Tampa Bay
-Toronto
-Baltimore
-Cleveland
-Detroit
-Kansas City
-Minnesota
-Houston
-Seattle
-Texas
-Oakland
-Washington
-New York
-Atlanta
-Miami
-Philadelphia
-Chicago
-Milwaukee
-St.Louis
-Pittsburgh
-Cinncinnati
-Los Angeles
-Arizona
-Colorado
-San Diego
-San Francisco
-"""
 
 
+
+ 

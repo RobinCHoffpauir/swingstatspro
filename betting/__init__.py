@@ -1,6 +1,6 @@
 import sqlite3
 import pandas as pd, pybaseball as pyb, matplotlib.pyplot as plt, seaborn as sns, mlbgame as mlb
-
+pyb.cache.enable()
 
 divisions = {
     "AL East": ["BOS", "NYY", "TBR", "TOR", "BAL"],
