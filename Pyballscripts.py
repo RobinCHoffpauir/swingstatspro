@@ -27,6 +27,6 @@ class Player:
         z = pyb.batting()
         return z.query('playerID in @self.bbref.values')
 
-    def get_matchup(self, opp_pitcher):
-        z = pyb.batting()
-        if
+    #def get_matchup(self, opp_pitcher):
+        #z = pyb.batting()
+        #if

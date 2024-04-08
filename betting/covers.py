@@ -36,4 +36,4 @@ columns = [
 df = pd.DataFrame(table_data, columns=columns)
 #df = df.drop('Game Number',axis=1, inplace=True)
 # Show the resulting DataFrame
-df.to_csv(f'betting/data/matchups/{today}_covers.csv', index=False)  # This will show the first few rows, use df to show the full DataFrame
+df.to_csv(f'betting/data/preview/{today}_covers.csv', index=False)  # This will show the first few rows, use df to show the full DataFrame
