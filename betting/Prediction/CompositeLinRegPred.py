@@ -4,31 +4,34 @@ import seaborn as sns
 from pybaseball import fg_batting_data
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import pandas as pd
 import numpy as np
-
+import joblib
+scaler = MinMaxScaler()
 # Fetch hitter data from 2010 to 2021
 start_year = 2021
 end_year = 2024
-hitter_data = pd.concat([fg_batting_data(year)
-                        for year in range(start_year, end_year + 1)])
+hitter_data = pd.concat([fg_batting_data(year, ind=1) for year in range(start_year, end_year + 1)])
 
 # Calculate team-level statistics by summing the individual player stats
 team_stats = hitter_data.groupby(['Team']).agg({
-    'wOBA': 'mean',
-    'wRC': 'sum',
-    'OPS': 'mean',
-    'WAR': 'sum',
-    'ISO': 'sum',
-    'R': 'sum'
+    'xwOBA': 'mean',
+    'Off': 'mean',
+    'L-WAR': 'mean',
+    'R': 'sum',
+    'wRC+':'sum',
+    'ISO+':'mean',
+    'Barrels': 'mean',
+    '+WPA': 'sum',
 }).reset_index()
 
 
-# Extract the features (wOBA, wRC, OPS, WAR, ISO) and target (R)
-X = team_stats[['wOBA', 'wRC', 'OPS', 'WAR', 'ISO']]
+# Extract the features (wOBA, wRC, OPS, WAR, ISO) and targe
+X = team_stats[['xwOBA','Off','L-WAR','wRC+','ISO+','Barrels','+WPA']]
 y = team_stats['R']
-
+X_scaled = scaler.fit_transform(X)
 
 def calculate_composite_metric(row, weights):
     return sum(row[stat] * weight for stat, weight in weights.items())
@@ -37,7 +40,7 @@ def calculate_composite_metric(row, weights):
 # %%
 # Split the data into training set and test set
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42)
+    X_scaled, y, test_size=0.2, random_state=42)
 
 # Perform multiple linear regression
 reg = LinearRegression()
@@ -64,9 +67,8 @@ print('Mean absolute error: %.2f' % mean_absolute_error(y_test, y_pred))
 
 # The coefficient of determination: 1 is perfect prediction
 print('Coefficient of determination (R^2): %.2f' % r2_score(y_test, y_pred))
-# %%
 
-# create a linear regression object
+# %%create a linear regression object
 lm = LinearRegression()
 
 # Cross-validate
@@ -83,7 +85,7 @@ mean_mse = np.mean(mse_scores)
 print(f'5-fold cross-validated Mean Squared Error: {mean_mse:.2f}')
 # %%
 # Display the weights (coefficients) for each stat
-weights = dict(zip(x.columns, reg.coef_))
+weights = dict(zip(X.columns, reg.coef_))
 print("Weights for each stat:")
 for stat, weight in weights.items():
     print(f"{stat}: {weight:.4f}")
@@ -100,12 +102,14 @@ print("Root Mean Squared Error: ", mean_squared_error(
     y_test, y_pred, squared=False))
 print("Mean Absolute Error: ", mean_absolute_error(y_test, y_pred))
 print("R-squared: ", r2_score(y_test, y_pred))
+# %% pickle the model for later use
 
+joblib.dump(lm, 'data/models/linreg_model.pkl')
 
 # %%
 team_stats_sorted = team_stats.sort_values(
-    ['Season', 'composite_metric'], ascending=[True, False])
-print(team_stats_sorted[['Season', 'Team', 'composite_metric', 'R']])
+    ['composite_metric'], ascending=[False])
+print(team_stats_sorted[['Team', 'composite_metric', 'R']])
 # %%
 
 sns.scatterplot(data=team_stats, x='composite_metric', y='R')
