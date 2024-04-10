@@ -1,0 +1,3 @@
+from Betting import created_winning_percentage as create_winning_percentage
+
+create_winning_percentage
