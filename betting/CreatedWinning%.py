@@ -56,12 +56,12 @@ teams = ['BOS',
          'TOR']
 # delete all values from the dictionary, leaving just the keys
 divisions = {
-    "NL East" :{"WSN", "MIA", "ATL", "NYM", "PHI"},
-    "NL Central" : {"CHC", "MIL", "STL", "PIT", "CIN"},
-    "NL West" : {"LAD", "ARI", "COL", "SDP", "SFG"},
-    "AL East" : {"TOR", "BOS", "CIN", "COL", "KCR"},
-    "AL Central" : {"CLE", "DET", "CWS", "KCR", "MIN"},
-    "AL West" : {"LAA", "HOU", "SEA", "TEX", "OAK"},
+    "AL East": {"BOS", "NYY", "TBR", "TOR", "BAL"},
+    "AL Central": {"CLE", "DET", "CHW", "KCR", "MIN"},
+    "AL West": {"LAA", "HOU", "SEA", "TEX", "OAK"},
+    "NL East": {"WSN", "NYM", "ATL", "MIA", "PHI"},
+    "NL Central": {"CHC", "MIL", "STL", "PIT", "CIN"},
+    "NL West": {"LAD", "ARI", "COL", "SDP", "SFG"}
 }
 
 
@@ -72,7 +72,7 @@ team_batting_data = team_batting(year)
 team_pitching_data = team_pitching(year)
 ##################
 team_dfs = {}  # Create an empty #dictionary to store DataFrames #for each team
-db_path = f"betting\data\databases\{year}_schedule_record.db"
+db_path = f"data\\databases\\{year}_schedule_record.db"
 conn = sqlite3.connect(db_path)
 c = conn.cursor()
 team_dfs = {}
@@ -104,22 +104,24 @@ run_data['Pythag Expected %'] = run_data['R']**2 / \
 compare = pd.merge(run_data
 [['Team', 'Pythag Expected %']], team_data[[
                    'Team', 'Created Winning %']], on='Team')
-
-for team, df in team_dfs.items():
-    # Determine wins: 1 for a win, 0 for a loss
-    df['Win'] = df['Rslt'].apply(lambda x: 1 if x == 'W' else 0)
-
-    # Calculate cumulative sum of wins
-    df['Cumulative Wins'] = df['Win'].cumsum()
-
-    # Calculate winning percentage: cumulative wins divided by number of games played so far
-    df['Winning Percentage'] = df['Cumulative Wins'] / (df.index + 1)
-
-compare.index = compare['Team']
+compare['Tm'] = compare['Team']
 compare = compare.drop('Team', axis=1)
-for team in compare.index:
-    z = team_dfs.get(team)['Winning Percentage']
-    y = compare.loc[team]
-    compare.loc[team, 'Win %'] = (z.iloc[161])
+for x, df in team_dfs.items():
+    df['Outcome'] = df['W/L'].apply(lambda x: 1 if x == 'W' or x == 'W-W/O' else 0)
+    # Step 1: Split the 'W-L' column into two separate columns
+    df[['Wins', 'Losses']] = df['W-L'].str.split('-', expand=True)
 
+    # Step 2: Convert these columns to numeric
+    df['Wins'] = pd.to_numeric(df['Wins'])
+    df['Losses'] = pd.to_numeric(df['Losses'])
+
+    # Step 3: Calculate the Winning Percentage
+    df['Winning Percentage'] = df['Wins'] / (df['Wins'] + df['Losses'])
+final_win_percentages = {team: df['Winning Percentage'].iloc[-1] for team, df in team_dfs.items()}
+
+final_win_perc_df = pd.DataFrame(list(final_win_percentages.items()), 
+                                 columns=['Tm', 'Final Winning Percentage']) 
+compare = pd.merge(compare, final_win_perc_df, on='Tm', how='left')
+compare.index= compare['Tm']
+compare = compare.drop('Tm', axis=1)
 print(compare)

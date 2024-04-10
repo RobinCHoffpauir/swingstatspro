@@ -92,7 +92,7 @@ for time in years:
         "AL East": {"BOS": red_sox, "NYY": yankees, "TBR": rays,
                     "TOR": blue_jays, "BAL": orioles},
         "AL Central": {"CLE": guardians, "DET": tigers,
-                       "CWS": white_sox, "KCR": royals,
+                       "CHW": white_sox, "KCR": royals,
                        "MIN": twins},
         "AL West": {"LAA": angels, "HOU": astros, "SEA": mariners,
                     "TEX": rangers, "OAK": athletics},
